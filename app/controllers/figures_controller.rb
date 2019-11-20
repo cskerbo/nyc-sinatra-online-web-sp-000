@@ -23,6 +23,7 @@ class FiguresController < ApplicationController
     new_title = params[:figure][:title]
     if new_title != nil
       @figure.title = new_title
+    end
 
     landmark_selections = params[:song][:genres]
     if genre_selections != nil
