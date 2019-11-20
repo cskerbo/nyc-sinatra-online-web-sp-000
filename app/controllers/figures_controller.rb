@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    @figure = Figure.create(:name => params[:figure][:name])
+    @figure = Figure.new(params[:figure])
 
     title_selections = params[:figure][:titles]
     if title_selections != nil
