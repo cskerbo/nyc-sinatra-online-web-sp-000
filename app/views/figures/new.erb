@@ -13,5 +13,9 @@
 <% @landmarks.each do |landmark| %>
   <h3><input id="<%= landmark.name %>" type="checkbox" name="landmark[name][]" value="<%= landmark.id %>"><%= landmark.name %></h3>
 <% end %>
+
+<h2>Create New Landmark:</h2>
+<input type="text" name="landmark[name]" id="Landmark Name">
+<input type="text" name="landmark[year]" id="Landmark Year">
 <input type="submit" value="Create">
 </form>
