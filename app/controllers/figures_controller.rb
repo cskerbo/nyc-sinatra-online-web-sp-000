@@ -38,6 +38,6 @@ class FiguresController < ApplicationController
 
     @figure.save
     flash[:message] = "Successfully created figure."
-    redirect to "songs/#{@song.slug}"
+    redirect to "figures/#{@figure.id}"
   end
 end
