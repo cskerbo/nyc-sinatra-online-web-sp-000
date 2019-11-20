@@ -25,11 +25,15 @@ class FiguresController < ApplicationController
       @figure.title = new_title
     end
 
-    landmark_selections = params[:song][:genres]
-    if genre_selections != nil
-      genre_selections.each do |genre|
-      @song.genres << Genre.find(genre)
+    landmark_selections = params[:figure][:landmarks]
+    if landmark_selections != nil
+      landmark_selections.each do |landmark|
+      @figure.landmarks << Landmark.find(landmark)
       end
+    end
+    new_landmark = params[:figure][:landmark]
+    if new_landmark != nil
+      @figure.landmark = new_landmark
     end
 
     @song.save
