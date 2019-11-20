@@ -18,6 +18,11 @@ class FiguresController < ApplicationController
     if title_selections != nil
       title_selections.each do |title|
       @figure.titles << Title.find(title)
+      end
+    end
+    new_title = params[:figure][:title]
+    if new_title != nil
+      @figure.title = new_title
 
     landmark_selections = params[:song][:genres]
     if genre_selections != nil
