@@ -14,31 +14,14 @@ class FiguresController < ApplicationController
   post '/figures' do
     @figure = Figure.new(params[:figure])
 
-    title_selections = params[:figure][:titles]
-    if title_selections != nil
-      title_selections.each do |title|
-      @figure.titles << Title.find(title)
-      end
+    if params[:title][:name].present?
+      @figure.titles << Title.create(params[:title])
     end
-    new_title = params[:figure][:title][:name]
-    if new_title != nil
-      @figure.titles = Title.create(:name => new_title)
+    if params[:landmark][:name].present?
+      @figure.landmarks << Landmark.create(params[:landmark])
     end
-
-    landmark_selections = params[:figure][:landmarks]
-    if landmark_selections != nil
-      landmark_selections.each do |landmark|
-      @figure.landmarks << Landmark.find(landmark)
-      end
-    end
-    new_landmark = params[:figure][:landmark]
-    if new_landmark != nil
-      @figure.landmark = new_landmark
-    end
-
     @figure.save
-    flash[:message] = "Successfully created figure."
-    redirect to "figures/#{@figure.id}"
+    redirect "/figures/#{@figure.id}"
   end
 
   get '/figures/:id' do
