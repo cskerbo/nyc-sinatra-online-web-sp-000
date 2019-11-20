@@ -3,4 +3,5 @@ class CreateLandmarks < ActiveRecord::Migration
     create_table :landmarks do |l|
       l.string :name
     end
+  end
 end
