@@ -12,7 +12,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    @figure = Figure.create(:name => params[:figure][:name])
+    @figure = Figure.create(params[:figure])
 
     if params[:title][:name].present?
       @figure.titles << Title.create(params[:title])
