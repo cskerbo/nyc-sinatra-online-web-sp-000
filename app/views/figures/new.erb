@@ -2,8 +2,10 @@
 <form action="/figures" method="POST">
 <h2>Name: <input type="text" name="figure[name]" id="Name"></h2><br>
 <h2>Titles</h2>
+<ul>
 <% @titles.each do |title| %>
-  <h3><input id="<%= title.name %>" type="checkbox" name="figure[name][]" value="<%= title.id %>"><%= title.name %></h3>
+  <h3><li><input id="<%= title.name %>" type="checkbox" name="figure[name][]" value="<%= title.id %>"><%= title.name %></li></h3>
 <% end %>
+</ul>
 <input type="submit" value="Create">
 </form>
