@@ -22,7 +22,7 @@ class FiguresController < ApplicationController
     end
     new_title = params[:figure][:title]
     if new_title != nil
-      @figure.title = new_title
+      @figure.title = Title.create(:name => new_title)
     end
 
     landmark_selections = params[:figure][:landmarks]
