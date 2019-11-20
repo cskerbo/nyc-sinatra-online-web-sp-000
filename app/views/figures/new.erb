@@ -7,7 +7,7 @@
   <ul><%= title.name %><input id="<%= title.name %>" type="checkbox" name="figure[titles][]" value="<%= title.id %>"></ul>
 <% end %>
 <h2>Create New Title:</h2>
-<input type="text" name="figure[titles]" id="Figure Title">
+<input type="text" name="figure[title][:name]" id="Figure Title">
 <h2>Landmarks</h2>
 
 <% @landmarks.each do |landmark| %>
