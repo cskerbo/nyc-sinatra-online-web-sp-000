@@ -36,7 +36,7 @@ class FiguresController < ApplicationController
       @figure.landmark = new_landmark
     end
 
-    @song.save
+    @figure.save
     flash[:message] = "Successfully created song."
     redirect to "songs/#{@song.slug}"
   end
