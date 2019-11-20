@@ -1,0 +1,9 @@
+<h1>Create a new figure:</h1>
+<form action="/figures" method="POST">
+<h2>Name: <input type="text" name="figure[name]" id="Name"></h2>
+
+<% @titles.each do |title| %>
+  <h3><input id="<%= title.name %>" type="checkbox" name="figure[name][]" value="<%= name.id %>"><%= title.name %></h3>
+<% end %>
+<input type="submit" value="Create">
+</form>
