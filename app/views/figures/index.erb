@@ -1,8 +1,10 @@
 <h1>All Historical Figures</h1>
 
 <ul>
-
-<li><% @figures.each do |f| %><%= f.name %></li>
+<li>
+<% @figures.each do |f| %>
+  <%= f.name %>
+</li>
 </ul>
 <%end%>
 <a class="button" href="/landmarks">Landmarks</a>
