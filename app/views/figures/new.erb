@@ -11,7 +11,7 @@
 <h2>Landmarks</h2>
 
 <% @landmarks.each do |landmark| %>
-  <ul><%= landmark.name %><input id="<%= landmark.name %>" type="checkbox" name="figure[landmarks][]" value="<%= landmark.id %>"></ul>
+  <ul><%= landmark.name %><input id="landmark_<%= landmark.id %>" type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"></ul>
 <% end %>
 
 <h2>Create New Landmark:</h2>
