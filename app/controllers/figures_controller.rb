@@ -40,4 +40,8 @@ class FiguresController < ApplicationController
     flash[:message] = "Successfully created figure."
     redirect to "figures/#{@figure.id}"
   end
+
+  get '/figures/:id' do
+    @figure = Figure.find_by(params[:id])
+    erb :'figures/show'
 end
