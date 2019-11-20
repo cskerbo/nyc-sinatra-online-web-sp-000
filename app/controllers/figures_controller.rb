@@ -20,7 +20,7 @@ class FiguresController < ApplicationController
       @figure.titles << Title.find(title)
       end
     end
-    new_title = params[:figure][:title][:name]
+    new_title = params[:figure][:title]
     if new_title != nil
       @figure.titles = Title.create(:name => new_title)
     end
