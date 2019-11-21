@@ -2,7 +2,7 @@
 
 <ul>
 <% @landmarks.each do |l| %>
-<li><%= l.name %></li>
+<li><a href="/figures/<%= figure.id %>"><%= l.name %></a></li>
 <%end%>
 </ul>
 <a class="button" href="/figures">Figures</a>
