@@ -11,7 +11,7 @@ class FiguresController < ApplicationController
     erb :'/figures/new'
   end
 
-  get '/figures/edit' do
+  get '/figures/:id/edit' do
     erb :'figures/edit'
   end
 
